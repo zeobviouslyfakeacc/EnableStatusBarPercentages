@@ -1,7 +1,14 @@
-﻿using Harmony;
+﻿using System;
+using System.Reflection;
+using Harmony;
 using UnityEngine;
 
 internal static class Patches {
+
+	public static void OnLoad() {
+		Version version = Assembly.GetExecutingAssembly().GetName().Version;
+		Debug.Log("[EnableStatusBarPercentages] Version " + version + " loaded!");
+	}
 
 	[HarmonyPatch(typeof(Panel_FirstAid), "Start")]
 	private static class EnableStatusBarPercentages {
