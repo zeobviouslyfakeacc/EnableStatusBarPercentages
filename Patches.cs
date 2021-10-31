@@ -3,14 +3,19 @@ using UnityEngine;
 
 internal static class Patches {
 
-	[HarmonyPatch(typeof(Panel_FirstAid), "Start")]
+	[HarmonyPatch(typeof(Panel_FirstAid), "Enable")]
 	private static class EnableStatusBarPercentages {
 
 		private static readonly Vector3 containerOffset = new Vector3(10, 5);
 		private static readonly Vector3 statusLabelOffset = new Vector3(-72, -8);
 		private static readonly Vector3 conditionLabelOffset = new Vector3(72, -10);
 
-		private static void Postfix(Panel_FirstAid __instance) {
+		private static bool initialized = false;
+
+		private static void Prefix(Panel_FirstAid __instance) {
+			if (initialized) return;
+			initialized = true;
+
 			CenterStatusLabel(__instance.m_ColdStatusLabel);
 			CenterStatusLabel(__instance.m_FatigueStatusLabel);
 			CenterStatusLabel(__instance.m_ThirstStatusLabel);
