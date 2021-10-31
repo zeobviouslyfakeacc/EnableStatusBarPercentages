@@ -59,7 +59,7 @@ internal static class Patches {
 		private static bool wellFedActive = false;
 
 		private static void Postfix(WellFed __instance) {
-			bool newActive = __instance.HasWellFed();
+			bool newActive = __instance.HasWellFed() && __instance.m_MaxConditionBonusPercent > 0f;
 			if (newActive == wellFedActive) return;
 
 			Transform labelTransform = InterfaceManager.m_Panel_FirstAid.m_LabelConditionPercent.transform;
