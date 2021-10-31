@@ -14,5 +14,5 @@ using System.Runtime.InteropServices;
 [assembly: Guid("876816f7-5100-496a-afe0-a46a65606481")]
 [assembly: AssemblyVersion("1.5.0.0")]
 [assembly: AssemblyFileVersion("1.5.0.0")]
-[assembly: MelonModInfo(typeof(EnableStatusBarPercentages.EnableStatusBarPercentagesMod), "EnableStatusBarPercentages", "1.5", "zeobviouslyfakeacc")]
-[assembly: MelonModGame("Hinterland", "TheLongDark")]
+[assembly: MelonInfo(typeof(EnableStatusBarPercentages.EnableStatusBarPercentagesMod), "EnableStatusBarPercentages", "1.5", "zeobviouslyfakeacc")]
+[assembly: MelonGame("Hinterland", "TheLongDark")]
