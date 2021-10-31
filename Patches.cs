@@ -8,7 +8,7 @@ internal static class Patches {
 
 		private static readonly Vector3 containerOffset = new Vector3(10, 5);
 		private static readonly Vector3 statusLabelOffset = new Vector3(-72, -8);
-		private static readonly Vector3 conditionLabelOffset = new Vector3(72, -10);
+		private static readonly Vector3 conditionLabelOffset = new Vector3(72, -10.5f);
 
 		private static bool initialized = false;
 
